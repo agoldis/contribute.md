@@ -1,0 +1,38 @@
+<svg height="100%" viewBox="0 0 420 310" xmlns="http://www.w3.org/2000/svg">
+  <linearGradient id="reflection">
+    <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0.5" />
+    <stop offset="80%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
+  </linearGradient>
+  <mask id="reflectionMask">
+    <path d="M20 40
+           v190 
+           q-5 5, 10 10 
+           h160
+           L 380 20
+           h-340
+           q -30 -30, -20 20
+           " fill="white"></path>
+  </mask>
+  
+  <rect x="20" y="20" rx="10" ry="10" width="380" height="220" fill="#313742" />
+  <rect x="30" y="30" width="360" height="170" fill="black" />
+  <path d="M20 210 v20 q0 10, 10 10 h360 q10 0, 10 -10 v-20 h-200 z" fill="#DCDFE2"></path>
+
+
+  <path d="M250 240
+        c 0 0, 0 45, 10 50
+        h-100
+        c 5 -5, 5 -5, 10 -50 z" fill="#D1D6DA"></path>
+  <path d="M250 240
+        c 0 0, 0 45, 10 50
+        h-100
+        z"
+        fill="url(#reflection)"></path>
+  <path d="M170 240 h80 v5 h-80 z" fill="rgba(0,0,0, 0.05)"></path>   
+  <path d="M150 290 h120 v5 h-120 z" fill="#D1D6DA"></path>
+  
+  <rect x="20" y="20" rx="10" ry="10" width="380" height="220" fill="url(#reflection)" mask="url(#reflectionMask)" />
+  
+  <circle cx="220" cy="25" r="2.5" fill="#464B54"></circle>
+  <circle cx="220" cy="25" r="1" fill="rgba(0,0,0,0.2)"></circle>
+</svg>
