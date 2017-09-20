@@ -1,0 +1,14 @@
+{
+  "name": "contribute.md",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/agoldis/contribute.md.git",
+  "author": "Andrew Goldis <agoldis@rollout.io>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
