@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/agoldis/contribute.md.git",
-  "author": "Andrew Goldis <agoldis@rollout.io>",
-  "license": "MIT",
+  "author": "Andrew Goldis <agoldis@gmail.com>",
   "scripts": {
-    "start": "node ."
+    "start": "bundle exec jekyll serve"
   },
-  "dependencies": {
-    "express": "^4.15.4"
-  }
+  "license": "MIT"
 }
