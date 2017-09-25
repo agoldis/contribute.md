@@ -4,11 +4,21 @@
 .site-header {
   border-top: 5px solid $grey-color-light;
   border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 1.865;
+  min-height: $spacing-unit * 3;
 
   // Positioning context for the mobile navigation icon
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-right: $spacing-unit;
+  padding-left:  $spacing-unit;
 }
+
+.logo {
+  height: 90px;
+}
+
 
 .site-title {
   @include relative-font-size(1.625);
@@ -16,7 +26,6 @@
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left;
 
   &,
   &:visited {
@@ -25,7 +34,6 @@
 }
 
 .site-nav {
-  float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
 
   .nav-trigger {
@@ -188,22 +196,23 @@
   flex: 1 1 auto;
   height: 100%;
   overflow: hidden;
-  background: radial-gradient(ellipse at center, #1e5799 0%,rgba(54, 151, 142, 0.8) 0%,#0C526C 100%,#3d7eaa 100%,#182848 100%,#6e48aa 100%,#6e48aa 100%);
-  position: relative
+  background: radial-gradient(ellipse at center, #5299C9 0%,rgba(91, 181, 216, 0.8) 0%,#4A96C9 100%,#3d7eaa 100%,#3699DB 100%,#6e48aa 100%,#6e48aa 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .display-widget-wrapper {
   position: absolute;
   bottom: 0;
-  height: 80vh;
 }
 
 #typed {
-  position: absolute;
-  bottom: 50vh;
-  left: 20vw;
+  text-align: center;
+  padding: 0 20px;
+  font-size: 30px;
   color: white;
-  font-family: 'Courier';
+  font-family: 'Roboto Mono', monospace;  
 }
 
 @include media-query($on-laptop) {
