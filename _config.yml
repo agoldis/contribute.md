@@ -23,7 +23,7 @@ oneliner: Boost your coding skills by contributing to open-source projects
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://contribute.md" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ContributeMd
-github_username:  agoldis
+github_username:  agoldis/contribute.md
 
 # Build settings
 markdown: kramdown
