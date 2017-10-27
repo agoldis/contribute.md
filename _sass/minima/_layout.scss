@@ -17,7 +17,24 @@
 
 .logo {
   height: 90px;
+  -webkit-perspective: 1200px;
+  -moz-perspective: 1200px;
+  -ms-perspective: 1200px;
+  perspective: 1200px;
+
+  
+  -webkit-transition: -webkit-transform 200ms ease-in; /* Changed here */ 
+  -moz-transition: -moz-transform 200ms ease-in;
+    -o-transition: -o-transform 200ms ease-in;
+       transition: transform 200ms ease-in;
+
+  &:hover {
+    -moz-transform: rotateX(10deg) rotateY(10deg) translateZ( 50px );
+    -ms-transform: rotateX(10deg) rotateY(10deg) translateZ( 50px );
+    transform: rotateX(10deg) rotateY(10deg) translateZ( 50px );
+  }
 }
+
 
 
 .site-title {

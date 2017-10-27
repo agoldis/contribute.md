@@ -7,7 +7,7 @@ permalink: /about/
 We, software engineers, developers and enthusiasts are always eager to learn and to improve our skills. There's a great opportunity to use the time we invest into learning, by helping the community and giving back - we can learn by contributing to open source!
 
 By doing that we benefit from:
- - Learning from the best mind - the collective orvermind
+ - Learning from the best minds - the collective overmind
  - Have a proven record and a showcase of skills and achievements - your future employer will like it!
  - Engage and collaborate - discover new tools and befriend other geeks
  - There're plenty reasons people collaborate to build open source....
