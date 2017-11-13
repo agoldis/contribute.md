@@ -3,5 +3,25 @@ layout: entry
 ---
 {% include typed.html %}
 <div class="entry">
-  <div id="typed"></div>
+  <div id="register">
+
+    Get early access and register
+
+    <div class="manual">
+      <input type="text" placeholder="Enter you email" />
+      <div><button>Submit</button></div>
+    </div>
+
+    <span>or get connected with</span>
+    <div class="social-login-buttons">
+      <button class="github-login">
+        {% include icon-github-login.html %}
+      </button>
+      <button class="google-login">
+        {% include icon-google-login.html %}
+      </button>
+    </div>
+  </div>
+  <div id="typed"></div>  
 </div>
+

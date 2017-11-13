@@ -8,30 +8,31 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
 body {
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  font: #{$base-font-size}/#{$base-line-height} $base-font-family;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
-  font-kerning: normal;
+  // -webkit-font-feature-settings: "kern" 1;
+  //    -moz-font-feature-settings: "kern" 1;
+  //      -o-font-feature-settings: "kern" 1;
+  //         font-feature-settings: "kern" 1;
+  // font-kerning: normal;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   height: 100vh;
 }
 
-
+input {
+  font: #{$base-font-size}/#{$base-line-height} $button-font-family;
+  color: $text-color;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm
@@ -175,7 +176,6 @@ pre {
   margin-left: auto;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
-  @extend %clearfix;
 
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
@@ -185,13 +185,10 @@ pre {
   }
 }
 
-/**
- * Clearfix
- */
-%clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+%flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -210,13 +207,5 @@ pre {
     path: {
       fill: $icons-color-hover;
     }
-  }
-}
-
-.social-media-list {
-  display: flex;
-  align-items: center;
-  .icon {
-    padding-right: 15px;
   }
 }
