@@ -209,6 +209,16 @@
   align-items: stretch;
   border-radius: $border-radius;
 
+  .title {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .message {
+    font-size: 16px;
+    text-align: center;
+  }
+
   button {
     font-family: $button-font-family;
     transition: background-color linear 80ms;
@@ -225,17 +235,23 @@
   .manual {
     justify-content: space-between;
     margin-bottom: 20px;
+
     input {
+      transition: background-color linear 120ms;
       box-sizing: border-box;
       width: 100%;
       padding: 5px 15px;
       border-radius: $border-radius;
       font-size: 16px;
-      background: #e1e1e1;
+      background-color: #e1e1e1;
       margin-bottom: 10px;
       height: 50px;
       border: none;
       outline: none;
+
+      &:focus {
+        background-color: rgb(231, 252, 255);
+      }
     }
     button {
       font-size: 18px;
@@ -246,6 +262,10 @@
       &:active:focus {
         background-color: lighten($button-primary-color, 10%);
       }
+    }
+
+    &.success, &.failure, &.loading {
+      display: none;
     }
   }
   .social-login-buttons {

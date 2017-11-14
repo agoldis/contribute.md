@@ -2,17 +2,102 @@
 layout: entry
 ---
 {% include typed.html %}
+
+<script>
+  var form, email, _name;
+  var API = 'https://api.contribute.md/signup';
+
+  function showSuccess() {
+    document.querySelector('.manual.form').setAttribute('style', 'display: none')
+    document.querySelector('.manual.loading').setAttribute('style', 'display: none');
+    document.querySelector('.manual.failure').setAttribute('style', 'display: none');
+    document.querySelector('.manual.success').setAttribute('style', 'display: block');
+  }
+
+  function showError() {
+    document.querySelector('.manual.form').setAttribute('style', 'display: none')
+    document.querySelector('.manual.loading').setAttribute('style', 'display: none');
+    document.querySelector('.manual.failure').setAttribute('style', 'display: block');
+    document.querySelector('.manual.success').setAttribute('style', 'display: none');
+  }
+
+  function showLoading() {
+    document.querySelector('.manual.form').setAttribute('style', 'display: none')
+    document.querySelector('.manual.loading').setAttribute('style', 'display: block');
+    document.querySelector('.manual.failure').setAttribute('style', 'display: none');
+    document.querySelector('.manual.success').setAttribute('style', 'display: none');
+  }
+
+  function sendRegisterRequest () {
+    const params = {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify({
+        email: email.value,
+        name: _name.value
+      })
+    };
+
+    showLoading();
+
+    fetch(API, params)
+      .then(showSuccess)
+      .catch(showError);
+  }
+
+  function handleSubmit (event) {
+    event.preventDefault();
+
+    var valid = true;
+    if (!email.validity.valid) {
+      valid = false;
+    }
+
+    if (!_name.validity.valid) {
+      valid = false;
+    }
+
+    if (!valid) {
+      return;
+    }
+    sendRegisterRequest();
+  }
+
+  function init() {
+    form  = document.getElementsByTagName('form')[0];
+    email = document.getElementById('email');
+    _name = document.getElementById('name');
+
+    form.addEventListener("submit", handleSubmit)
+  }
+  
+  document.addEventListener("DOMContentLoaded", init);
+</script>
+
 <div class="entry">
   <div id="register">
 
-    Get early access and register
+    <span class="title">Register to get early access</span>
 
-    <div class="manual">
-      <input type="text" placeholder="Enter you email" />
-      <div><button>Submit</button></div>
+    <form class="manual form">
+      <input type="text" id="name" placeholder="Enter your name" required autofocus  minlength="3" />
+      <input type="email" id="email" placeholder="Enter you email" required /> 
+      <button id="registrationButton">Submit</button>
+    </form>
+
+    <div class="manual loading message">
+        Processing register request...
     </div>
 
-    <span>or get connected with</span>
+    <div class="manual success message">
+        Done! Please check your email to confirm registration
+    </div>
+
+    <div class="manual failure message">
+        Failure while registering :(
+    </div>
+
+    <!-- <span>or get connected with</span>
     <div class="social-login-buttons">
       <button class="github-login">
         {% include icon-github-login.html %}
@@ -20,7 +105,7 @@ layout: entry
       <button class="google-login">
         {% include icon-google-login.html %}
       </button>
-    </div>
+    </div> -->
   </div>
   <div id="typed"></div>  
 </div>
